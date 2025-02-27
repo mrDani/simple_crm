@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get "customers/index"
-  get 'customers/alphabetized', to: 'customers#alphabetized'
-  get 'customers/missing_email', to: 'customers#missing_email'
+  root 'customers#index'
   
+  # Define the custom routes
+  get 'customers/alphabetized', to: 'customers#alphabetized', as: 'customers_alphabetized'
+  get 'customers/missing_email', to: 'customers#missing_email', as: 'customers_missing_email'
+
   resources :customers, only: [:index]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
