@@ -15,3 +15,24 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+// app/assets/stylesheets/active_admin.scss
+
+.admin-customer-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  // Adjust the image for the show page to be slightly smaller but still visible
+.admin-customer-image-large {
+    width: 50px;
+    height: 50px !important;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  

@@ -1,6 +1,8 @@
 class AdminUser < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, 
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :validatable
+
+  # Allow Ransack to search only these fields (avoid sensitive ones)
+  def self.ransackable_attributes(auth_object = nil)
+    ["id", "email", "created_at", "updated_at"]
+  end
 end

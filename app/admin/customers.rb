@@ -20,8 +20,28 @@ ActiveAdmin.register Customer do
     column :email_address
     column :notes
     column :image do |customer|
-      image_tag url_for(customer.image), class: 'admin-index-image' if customer.image.attached?
+      if customer.image.attached?
+        image_tag url_for(customer.image), class: "admin-customer-image"
+      else
+        "No Image"
+      end
     end
     actions
+  end
+
+  show do
+    attributes_table do
+      row :full_name
+      row :phone_number
+      row :email_address
+      row :notes
+      row :image do |customer|
+        if customer.image.attached?
+          image_tag url_for(customer.image), class: "admin-customer-image-large"
+        else
+          "No Image"
+        end
+      end
+    end
   end
 end
