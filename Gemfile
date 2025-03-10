@@ -57,7 +57,7 @@ group :test do
 end
 
 # Gemfile
-gem 'activeadmin', '~> 3.2'
+gem 'activeadmin', '~> 3.3'
 gem 'devise'
 gem 'ransack'
 gem 'image_processing', '~> 1.2'
